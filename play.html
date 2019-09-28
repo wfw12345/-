@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #canvas{border: 1px seagreen solid;}
+  </style>
+
+</head>
+<body>
+    <!-- <a href="./index.html" id="go">过关了：第<span id="level">1</span>关</a> -->
+
+    <script>
+    var level=window.location.href.split('#')[1];
+    console.log(level);
+    if(level == undefined){
+        level=0;
+    }
+    level++;
+        document.getElementById('level').innerHTML=level;
+        document.getElementById('go').setAttribute('href','./index.html#'+level);
+    
+    </script>
+    <canvas width="800" height="600" id="canvas"></canvas>
+    <script src="./js/plays.js"></script>
+</body>
+</html>

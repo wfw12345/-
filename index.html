@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        html,body,.box{width: 100%;height: 100%;}
+        body{
+            background:url('./imgs/11.jpg') no-repeat;
+             background-size: cover;
+             overflow: hidden;
+             position: relative;
+        }
+        .box h1{
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .box .text{
+            display: inline-block;
+            width: 70px;
+            height: 60px;
+            border: 1px #ccc solid;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: url('./imgs/play.png') no-repeat 50% 10%; 
+        }
+        .box .text a{
+            display:block;
+            color: #000;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 40px;
+        }
+       
+    </style>
+  
+   
+     </head>
+     <body>
+    <div class="box">
+         <h1>见缝插针小游戏</h1>    
+        <div class="text"><a href="./play.html" id="go">第<span id="level">1</span>关</a></div> 
+    </div>
+    <script>
+    var level=window.location.href.split('#')[1];
+    console.log(level);
+    if(level==7){level=0};
+    if(level){
+        document.getElementById('level').innerHTML= Number(level)+1;
+        document.getElementById('go').setAttribute('href','./play.html#'+level);
+    } 
+    </script> 
+    
+</body>
+</html>
